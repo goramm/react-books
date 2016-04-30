@@ -1,0 +1,13 @@
+root: true
+extends: airbnb
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+rules:
+  global-require: 0
+  no-warning-comments: 1
+  no-underscore-dangle: 0
+  arrow-body-style: 0
+  react/no-multi-comp: 0
+  react/jsx-no-literals: 2
+  comma-dangle: 0
