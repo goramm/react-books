@@ -1,16 +1,15 @@
-import React from 'react';
-import Header from './header.js';
-import BookList from '../containers/book-list';
-import BookDetail from '../containers/book-detail';
+import React, { PropTypes } from 'react';
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="container">
-      <Header title="List of the books" />
-      <BookList />
-      <BookDetail />
+      {props.children}
     </div>
   );
+};
+
+App.PropTypes = {
+  children: PropTypes.node
 };
 
 export default App;

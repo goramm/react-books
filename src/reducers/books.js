@@ -1,16 +1,23 @@
 import { books } from '../data/books';
 
+function selectRelatedBooks(book) {
+  return books.filter(b => b.id !== book.id && b.category_id === book.category_id);
+}
+
 export const SELECT_BOOK = 'books/SELECT_BOOK';
 export function selectBook(book) {
   return {
     type: SELECT_BOOK,
     book,
+    releatedBooks: selectRelatedBooks(book)
   };
 }
 
+const defaultBook = books[0];
 const initialState = {
-  activeBook: books[0],
-  list: books
+  activeBook: defaultBook,
+  list: books,
+  releatedBooks: selectRelatedBooks(defaultBook)
 };
 
 export default function reducer(state = initialState, action) {
@@ -19,6 +26,7 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         activeBook: action.book,
+        releatedBooks: action.releatedBooks
       };
 
     default:
