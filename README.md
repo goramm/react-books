@@ -1,6 +1,6 @@
 # REACT BOOKS
 
-###Instalation###
+### Instalation
 Checkout this repo, install dependencies, then start process with the following:
 
 ```
